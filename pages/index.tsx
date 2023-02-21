@@ -1,11 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '@/styles/Home.module.css';
+import CodeIcon from '@/components/icons/CodeIcon';
+import StanIcon from '@/components/icons/StanIcon';
+import { Poppins } from '@next/font/google';
+import { useState } from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
 
 export default function Home() {
+  const [navClicked, setNavClicked] = useState<string>('home');
+  const [aboutClicked, setAboutClicked] = useState<string>('skills');
   return (
     <>
       <Head>
@@ -14,110 +22,333 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main className={`${styles.main} ${poppins.className}`}>
+        <div className={styles.header}>
+          <div className={`${styles.container} flex flex-col`}>
+            <nav className={`${styles.nav} justify-center text-2xl `}>
+              {/* <Image
+                alt="logo"
+                src="/logo.png"
+                className="logo"
+                width={200}
+                height={200}
+              /> */}
+              <ul id="sidemenu">
+                <li
+                  className={`${styles.navUiLi} hover:cursor-pointer`}
+                  onClick={() => setNavClicked('home')}
+                >
+                  <a
+                    className={`${styles.navUiLiA} ${styles.test}  ${
+                      navClicked == 'home' ? styles.testClicked : styles.test
+                    }`}
+                    href="#header"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li
+                  className={`${styles.navUiLi} hover:cursor-pointer`}
+                  onClick={() => setNavClicked('resume')}
+                >
+                  <a
+                    className={`${styles.navUiLiA} ${styles.test}  ${
+                      navClicked == 'resume' ? styles.testClicked : styles.test
+                    }`}
+                  >
+                    Resume
+                  </a>
+                </li>
+                {/* <li className={styles.navUiLi}>
+                  <a className={styles.navUiLiA} href="#services">
+                    Services
+                  </a>
+                </li>
+                <li className={styles.navUiLi}>
+                  <a className={styles.navUiLiA} href="#portfolio">
+                    Portfolio
+                  </a>
+                </li>
+                <li className={styles.navUiLi}>
+                  <a className={styles.navUiLiA} href="#contact">
+                    Contact
+                  </a>
+                </li> */}
+                {/* <i className="fas fa-times">X</i> */}
+              </ul>
+              {/* <i className="fas fa-bars">-</i> */}
+            </nav>
+            <div className={`${styles.headerText} flex items-center`}>
+              <div className="flex-col basis-3/5">
+                <p>Software Engineer</p>
+                <h1 className={styles.headerTextH1}>
+                  {/*  eslint-disable-next-line react/no-unescaped-entities */}
+                  Hi, I'm{' '}
+                  <span className="font-bold tracking-wide">Stanley</span>
+                </h1>
+              </div>
+              <StanIcon />
+            </div>
           </div>
         </div>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
+        <div className={styles.about} id="about">
+          <div className={styles.container}>
+            <div className={styles.row}>
+              <div className={styles.aboutCol1}>
+                <Image
+                  className={styles.aboutCol1Img}
+                  alt="user"
+                  src="/stan4.png"
+                  // fill={true}
+                  width={292}
+                  height={506}
+                  quality={100}
+                />
+              </div>
+              <div className={styles.aboutCol2}>
+                <h1 className={styles.subTitle}>About Me</h1>
+                <p>
+                  Hey! My name is Stanley and I'm a Software Engineer based in
+                  Toronto, Canada.
+                  <br />
+                  <br />
+                  I've been developing web applications for over 3 years now and
+                  I truly belive that this is my passion.
+                  <br />
+                  Over the years I've fallen in love with the idea of writing
+                  entire web apps in one language, that language of course being
+                  JavaScript (namely TypeScript). Something that would not have
+                  been possible without the introduction of the Node runtime
+                  <br />
+                  <br />
+                  For my personal projects, I've spent quite some time scouring
+                  the internet in search of finding the framework and libraries
+                  that would result in the best possible developer experince.
+                  Some of my current favourites are: React.js, Next.js,
+                  Supabase, Prisma, GraphQL and TailwindCSS
+                </p>
+
+                <div className={styles.tabTitles}>
+                  <p
+                    className={`${styles.tabLinks}  ${
+                      aboutClicked == 'skills' ? styles.activeLink : ''
+                    }`}
+                    onClick={() => setAboutClicked('skills')}
+                  >
+                    Skills
+                  </p>
+                  <p
+                    className={`${styles.tabLinks}  ${
+                      aboutClicked == 'experience' ? styles.activeLink : ''
+                    } `}
+                    onClick={() => setAboutClicked('experience')}
+                  >
+                    Experience
+                  </p>
+                </div>
+                <div
+                  className={`${styles.tabContents}  ${
+                    aboutClicked == 'skills' ? styles.activeTab : ''
+                  }`}
+                  id="skills"
+                >
+                  <ul>
+                    <li>
+                      <span>Front End</span>
+                      <br />
+                      React.js | TailwindCSS | Jest
+                    </li>
+                    <li>
+                      <span>Back End</span>
+                      <br />
+                      Node.js | Next.js | Supabase | SQL | OAuth 2.0 | PHP |
+                      Java | C#
+                    </li>
+                    <li>
+                      <span>DevOps</span>
+                      <br />
+                      Git | Github Actions | Jira
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  className={`${styles.tabContents} ${
+                    aboutClicked == 'experience' ? styles.activeTab : ''
+                  } `}
+                  id="experience"
+                >
+                  <ul>
+                    <li>
+                      <span>05/2022 - 08/2022</span>
+                      <br />
+                      <div className="text-lg font-semibold">
+                        Web Developer Intern at{' '}
+                        <a
+                          href="https://omegacoders.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#ff004f] underline hover:text-[#ff97ae] hover:cursor-pointer"
+                        >
+                          Omega Coders
+                        </a>
+                      </div>
+                      <br />
+                      Implemented and designed feature rich systems and
+                      components for an enterprise level human resources SaaS
+                      tool using CodeIgniter, PHP, JavaScript and MySQL
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+        {/* <div id="services">
+          <div className={styles.container}>
+            <h1 className={styles.subTitle}>My Services</h1>
+            <div className={styles.servicesList}>
+              <div>
+                <CodeIcon />
+                <h2>Web Design</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  nulla nibh, tincidunt sit amet sapien quis.
+                </p>
+                <a href="#">Learn more</a>
+              </div>
+              <div>
+                <i className="fas fa-crop-alt"></i>
+                <h2>UI/UX Design</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  nulla nibh, tincidunt sit amet sapien quis.
+                </p>
+                <a href="#">Learn more</a>
+              </div>
+              <div>
+                <i className="fab fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  nulla nibh, tincidunt sit amet sapien quis.
+                </p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div> */}
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+        <div className={styles.portfolio}>
+          <div className={styles.container}>
+            <h1 className={styles.subTitle}>My Work</h1>
+            <div className={styles.workList}>
+              <div className={styles.work}>
+                <Image
+                  className={`${styles.workImg} hover:scale-90 overflow-hidden`}
+                  alt="work"
+                  src="/FrostCord1.png"
+                  width={500}
+                  height={500}
+                />
+                <div className={styles.layer}>
+                  <h3>FrostCord</h3>
+                  <p>
+                    A FrostPunk themed Discord Clone. An instant messaging web
+                    application that supports real-time communication via
+                    web-sockets
+                  </p>
+                  <a
+                    href="https://github.com/FrostCord/FrostCord"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      alt="gh"
+                      src="/github-mark-white.png"
+                      width={1000}
+                      height={1000}
+                      className="hover:scale-110 transition duration-150"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className={`${styles.work}`}>
+                <Image
+                  className={`${styles.workImg}  hover:scale-90 overflow-hidden`}
+                  alt="work"
+                  src="/RemindMe1.png"
+                  width={800}
+                  height={800}
+                />
+                <div className={styles.layer}>
+                  <h3>RemindMe</h3>
+                  <p>
+                    A personal reminder web application which enables users to
+                    generate scheduled tasks and events
+                  </p>
+                  <a
+                    href="https://github.com/Stan-l-e-y/RemindMe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      alt="gh"
+                      src="/github-mark-white.png"
+                      width={1000}
+                      height={1000}
+                      className="hover:scale-110 transition duration-150"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* <a href="#" className={styles.btn}>
+              See more
+            </a> */}
+          </div>
+        </div>
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
+        <div id="contact">
+          <div className={styles.container}>
+            <div className={styles.row}>
+              <div className={styles.contactLeft}>
+                <h1 className={styles.subTitle}>Contact Me</h1>
+                <div className="flex items-center ">
+                  <span className="mr-5">stanleytsonev@hotmail.com</span>
+                  <div className="">
+                    <a
+                      href="https://www.linkedin.com/in/stanleytsonev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        alt="linkedin"
+                        src="/linked.png"
+                        width={30}
+                        height={30}
+                      />
+                    </a>
+                    <a href="">
+                      <i className="fab fa-twitter-square"></i>
+                    </a>
+                    <a href="">
+                      <i className="fab fa-instagram"></i>
+                    </a>
+                    <a href="">
+                      <i className="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                {/* <a href="images/my-cv.pdf" download className="btn btn2">
+                  Download CV
+                </a> */}
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </>
-  )
+  );
 }
