@@ -65,7 +65,7 @@ export default function Resume() {
             </nav>
             <iframe
               className={`mt-5 ${styles.resume}`}
-              src="/resume.pdf"
+              src="/resume.pdf#zoom=100"
             ></iframe>
           </div>
         </div>
