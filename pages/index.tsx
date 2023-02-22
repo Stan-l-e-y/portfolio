@@ -85,7 +85,7 @@ export default function Home() {
               </ul>
               {/* <i className="fas fa-bars">-</i> */}
             </nav>
-            <div className={`${styles.headerText} flex items-center`}>
+            <div className={`${styles.headerText} flex items-center `}>
               <div className="flex-col basis-3/5">
                 <p>Software Engineer</p>
                 <h1 className={styles.headerTextH1}>
@@ -248,7 +248,7 @@ export default function Home() {
         </div> */}
 
         <div className={styles.portfolio}>
-          <div className={styles.container}>
+          <div className={styles.containerWork}>
             <h1 className={styles.subTitle}>My Work</h1>
             <div className={styles.workList}>
               <div className={styles.work}>

@@ -24,6 +24,10 @@
   padding: 10px 10%;
 }
 
+.containerWork {
+  padding: 10px 10%;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -349,6 +353,32 @@ form .btn2 {
 .copyright a {
   color: #ff004f;
   text-decoration: none;
+}
+
+.resume {
+  width: 800px;
+  height: 1100px;
+}
+
+@media only screen and (max-width: 600px) {
+  .headerText {
+    display: flex;
+    flex-direction: column;
+  }
+  .workImg {
+    width: 400px;
+    height: 341px;
+    border-radius: 10px;
+    display: block;
+    transition: transform 1s;
+  }
+  .containerWork {
+    padding: 0;
+  }
+  .resume {
+    width: 400px;
+    height: 600px;
+  }
 }
 /* -----------------css for small screens--------- */
 /* nav .fas {
