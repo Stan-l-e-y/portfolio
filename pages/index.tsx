@@ -127,6 +127,7 @@ export default function Home() {
                   entire web apps in one language, that language of course being
                   JavaScript (namely TypeScript). Something that would not have
                   been possible without the introduction of the Node runtime
+                  environment
                   <br />
                   <br />
                   For my personal projects, I've spent quite some time scouring
