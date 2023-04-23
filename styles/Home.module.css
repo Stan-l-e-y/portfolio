@@ -217,10 +217,11 @@ nav ul li a:hover::after {
   width: 425px;
   position: relative;
   overflow: hidden;
+  box-shadow: -8px 5px 30px hsla(0, 60%, 50%, 0.749);
 }
 .workImg {
   width: 425px;
-  height: 341px;
+  height: 310px;
   border-radius: 10px;
   display: block;
   transition: transform 1s;
@@ -318,27 +319,7 @@ nav ul li a:hover::after {
   display: inline-block;
   background: #ff004f;
 }
-/* .contact-right form {
-  width: 100%;
-}
-form input,
-form textarea {
-  width: 100%;
-  border: 0;
-  outline: none;
-  background: #262626;
-  padding: 15px;
-  margin: 15px 0;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 6px;
-}
-form .btn2 {
-  padding: 14px 60px;
-  font-size: 18px;
-  margin-top: 20px;
-  cursor: pointer;
-} */
+
 .copyright {
   width: 100%;
   text-align: center;
@@ -366,13 +347,14 @@ form .btn2 {
     flex-direction: column;
   }
   .workImg {
-    width: 400px;
-    height: 341px;
+    width: 425px;
+    height: 310px;
     border-radius: 10px;
     display: block;
     transition: transform 1s;
   }
   .containerWork {
+    margin-left: 8px;
     padding: 0;
   }
   .resume {

@@ -257,8 +257,8 @@ export default function Home() {
                   className={`${styles.workImg} hover:scale-90 overflow-hidden`}
                   alt="work"
                   src="/frost.png"
-                  width={500}
-                  height={500}
+                  width={3000}
+                  height={3000}
                 />
                 <div className={styles.layer}>
                   <h3>FrostCord</h3>
