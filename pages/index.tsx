@@ -256,7 +256,7 @@ export default function Home() {
                 <Image
                   className={`${styles.workImg} hover:scale-90 overflow-hidden`}
                   alt="work"
-                  src="/FrostCord1.png"
+                  src="/frost.png"
                   width={500}
                   height={500}
                 />
