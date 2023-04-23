@@ -213,41 +213,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div id="services">
-          <div className={styles.container}>
-            <h1 className={styles.subTitle}>My Services</h1>
-            <div className={styles.servicesList}>
-              <div>
-                <CodeIcon />
-                <h2>Web Design</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  nulla nibh, tincidunt sit amet sapien quis.
-                </p>
-                <a href="#">Learn more</a>
-              </div>
-              <div>
-                <i className="fas fa-crop-alt"></i>
-                <h2>UI/UX Design</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  nulla nibh, tincidunt sit amet sapien quis.
-                </p>
-                <a href="#">Learn more</a>
-              </div>
-              <div>
-                <i className="fab fa-app-store"></i>
-                <h2>App Design</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  nulla nibh, tincidunt sit amet sapien quis.
-                </p>
-                <a href="#">Learn more</a>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
         <div className={styles.portfolio}>
           <div className={styles.containerWork}>
             <h1 className={styles.subTitle}>My Work</h1>
@@ -263,9 +228,9 @@ export default function Home() {
                 <div className={styles.layer}>
                   <h3>FrostCord</h3>
                   <p>
-                    A FrostPunk themed Discord Clone. An instant messaging web
-                    application that supports real-time communication via
-                    web-sockets
+                    A FrostPunk themed Discord Clone. An instant
+                    messaging/voice/video web application that supports
+                    real-time communication via web-sockets and webRTC
                   </p>
                   <a
                     href="https://github.com/FrostCord/FrostCord"
