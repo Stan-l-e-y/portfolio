@@ -226,14 +226,14 @@ export default function Home() {
                   height={3000}
                 />
                 <div className={styles.layer}>
-                  <h3>FrostCord</h3>
+                  <h3>FrostByte</h3>
                   <p>
                     A FrostPunk themed Discord Clone. An instant
                     messaging/voice/video web application that supports
                     real-time communication via web-sockets and webRTC
                   </p>
                   <a
-                    href="https://github.com/FrostCord/FrostCord"
+                    href="https://github.com/FrostByteOrg/FrostByte"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
