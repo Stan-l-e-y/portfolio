@@ -94,7 +94,14 @@ export default function Home() {
                   <span className="font-bold tracking-wide">Stanley</span>
                 </h1>
               </div>
-              <StanIcon />
+              {/* <StanIcon /> */}
+              <Image
+                className={styles.aboutCol2Img}
+                alt="user"
+                src="/DSC08328_IG.jpg"
+                width={320}
+                height={500}
+              />
             </div>
           </div>
         </div>
@@ -106,8 +113,7 @@ export default function Home() {
                 <Image
                   className={styles.aboutCol1Img}
                   alt="user"
-                  src="/stan4.png"
-                  // fill={true}
+                  src="/DSC08295_IG.jpg"
                   width={292}
                   height={506}
                   quality={100}
