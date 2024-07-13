@@ -33,7 +33,7 @@ export default function Resume() {
                 className="logo"
                 width={200}
                 height={200}
-              /> */}
+              />test */}
               <ul id="sidemenu">
                 <li
                   className={`${styles.navUiLi} hover:cursor-pointer`}
